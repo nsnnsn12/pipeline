@@ -9,7 +9,7 @@ sudo dnf remove docker \
                   docker-engine
 
 echo '======= [2] Set up the repository =========='
-sudo dnf -y install dnf-plugins-core
+sudo dnf -y install dnf-plugins
 sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 echo '======= [3] Install the Docker packages =========='
@@ -25,3 +25,5 @@ newgrp docker
 echo '======= [6] Configure Docker to start on boot with systemd =========='
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+
+sudo docker swarm init
