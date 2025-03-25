@@ -32,6 +32,12 @@ sudo docker swarm init
 echo '======= [8] Install GitHub CLI =========='
 sudo dnf install 'dnf-command(config-manager)'
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh --repo gh-cli
+sudo dnf install gh -y --repo gh-cli
+# need to set github token
+gh auth login --with-token < $GIT_HUB_TOKEN_PATH
+
+echo '======= [9] Download deploy package =========='
+gh repo clone deploy-for-petclinic
+
 
 echo '======= [9] You have to set SSH For Deploy =========='
