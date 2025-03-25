@@ -41,3 +41,6 @@ gh repo clone deploy-for-petclinic
 
 
 echo '======= [9] You have to set SSH For Deploy =========='
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+# copy your public key to authorized_keys
