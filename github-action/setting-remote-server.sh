@@ -36,10 +36,6 @@ sudo dnf install gh -y --repo gh-cli
 # need to set github token
 gh auth login --with-token < $GIT_HUB_TOKEN_PATH
 
-echo '======= [9] Download deploy package =========='
-gh repo clone deploy-for-petclinic
-
-
 echo '======= [9] You have to set SSH For Deploy =========='
 mkdir ~/.ssh
 touch ~/.ssh/authorized_keys
